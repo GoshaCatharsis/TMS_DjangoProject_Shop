@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from .views import IndexView
+from .views import IndexView, BookView
 
 
 # '' -  домашняя страница
@@ -10,5 +10,6 @@ from .views import IndexView
 # 'author/<id>' - детальная информация для автора
 
 urlpatterns = [
-    path('', IndexView.as_view(), name='catalog-index')
+    path('', IndexView.as_view(), name='catalog-index'),
+    path('book/<int:id>/', BookView.as_view(), name='catalog-book')
 ]
