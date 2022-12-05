@@ -11,7 +11,7 @@
 
   <form method="post">
     {% csrf_token %}
-    <h1 class="h3 mb-3 fw-normal">Пожалуйста, войдите</h1>
+    <h1 class="h3 mb-3 fw-normal">Please, log in</h1>
 
     <div class="form-floating">
       <input type="text" class="form-control" id="floatingInput" name="username" placeholder="Username">
@@ -19,7 +19,7 @@
     </div>
     <div class="form-floating">
       <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
-      <label for="floatingPassword">Пароль</label>
+      <label for="floatingPassword">Password</label>
     </div>
 
     <div class="checkbox mb-3">
@@ -27,7 +27,7 @@
         <a href="{% url 'password_reset' %}">Forgot password?</a>
       </label>
     </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Войти</button>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
     <p class="mt-5 mb-3 text-muted">© Gosha Catharsis inc.</p>
   </form>
 </main>
