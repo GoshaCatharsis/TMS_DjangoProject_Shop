@@ -38,7 +38,7 @@
           <div class="card shadow-sm">
             <svg class="bd-placeholder-img card-img-top" width="50%" height="500px" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Эскиз" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Sketch</text></svg>
             <div class="card-body">Title: {{book.title}}
-              <p class="card-text">Author: {{book.author}}</p>
+              <p>Author:<a class="card-text" href="{{ book.author.get_author_url }}" style="text-decoration: none; "> {{book.author}}</a></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <a type="button" class="btn btn-sm btn-outline-secondary" href="{{ book.get_book_url }}">Show</a>
@@ -50,7 +50,6 @@
           </div>
         </div>
         {% endfor %}
-
       </div>
     </div>
   </div>
