@@ -19,19 +19,19 @@
             </a>
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-              <li><a href="{% url 'catalog-index' %}" class="nav-link px-2 text-secondary">Главная</a></li>
-              <li><a href="#" class="nav-link px-2 text-white">Функции</a></li>
-              <li><a href="#" class="nav-link px-2 text-white">Ценообразование</a></li>
+              <li><a href="{% url 'catalog-index' %}" class="nav-link px-2 text-secondary">Main</a></li>
+              <li><a href="#" class="nav-link px-2 text-white">Functions</a></li>
+              <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
               <li><a href="#" class="nav-link px-2 text-white">FAQ</a></li>
-              <li><a href="#" class="nav-link px-2 text-white">О нас</a></li>
+              <li><a href="#" class="nav-link px-2 text-white">About</a></li>
             </ul>
 
             <div class="text-end">
                 {% if user.is_authenticated %}
                 <span class="px-4 text-white">Hello, {{user.username}}!</span><a type="button" class="btn btn-outline-light me-2" href="{% url 'logout' %}">Logout</a></span>
                 {%  else %}
-                    <a type="button" class="btn btn-outline-light me-2" href="{% url 'login' %}">Sign in</a>
-                    <button type="button" class="btn btn-warning">Sign up</button>
+                    <a type="button" class="btn btn-outline-light me-2" href="{% url 'login' %}">Log in</a>
+                    <a type="button" class="btn btn-warning" href="{% url 'account-registration' %}">Sign up</a>
                 {% endif %}
             </div>
           </div>
