@@ -22,7 +22,7 @@
   </a><div class="navbar navbar-dark bg-dark shadow-sm"><a href="#" class="text-white">
     </a><div class="container"><a href="#" class="text-white">
       </a><a href="#" class="navbar-brand d-flex align-items-center">
-        <strong>{% if author %} {{ author.last_name }}'s Book catalog {% else %} Book Catalog {% endif%}</strong>
+        <strong>{% if author %} {{ author.last_name }}'s Book catalog {% elif genre %} {{genre.name}}'s {% else %} Book Catalog {% endif%}</strong>
       </a>
       <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Переключить навигацию">
         <span class="navbar-toggler-icon"></span>
