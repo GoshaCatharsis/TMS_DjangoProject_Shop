@@ -3,11 +3,12 @@
 {% block content %}
 <main class="form-signin text-center container">
 
-  {% if form.errors %}
+  {% if user_form.errors %}
 
     <div class="alert alert-danger alert-dismissible">
-      <strong>Error!</strong>{{form.errors}}
+      <strong>Error!</strong>{{user_form.errors}}
     </div>
+
   {% endif %}
 
   <form method="post">
@@ -20,13 +21,18 @@
     </div>
 
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput2" name="first_name" placeholder="Your name">
-      <label for="floatingInput2">Your name</label>
+      <input type="email" class="form-control" id="floatingInput2" name="email" placeholder="email">
+      <label for="floatingInput2">Email</label>
     </div>
 
     <div class="form-floating">
-      <input type="text" class="form-control" id="floatingInput3" name="last_name" placeholder="Your surname">
-      <label for="floatingInput3">Your surname</label>
+      <input type="text" class="form-control" id="floatingInput3" name="first_name" placeholder="Your name">
+      <label for="floatingInput3">Your name</label>
+    </div>
+
+    <div class="form-floating">
+      <input type="text" class="form-control" id="floatingInput4" name="last_name" placeholder="Your surname">
+      <label for="floatingInput4">Your surname</label>
     </div>
 
     <div class="form-floating">
