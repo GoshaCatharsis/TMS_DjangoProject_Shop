@@ -42,7 +42,7 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <a type="button" class="btn btn-sm btn-outline-secondary" href="{{ book.get_book_url }}">Show</a>
-                  <button type="button" class="btn btn-primary">Add to cart</button>
+                  <a type="button" class="btn btn-primary" href="{{ book.add_to_cart }}">Add to cart</a>
                 </div>
                 <span class="badge bg-success">{{book.price}}$</span>
               </div>
