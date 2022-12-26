@@ -28,13 +28,16 @@
                       <tbody>
                         {% for book in cart.products.all %}
                         <tr>
-                          <td style="vertical-align: middle">{{ book.title }}</td>
-                          <td style="vertical-align: middle">{{ book.price }}</td>
-                          <td><img src="{{book.image.url}}" width="60px" height="110px"></td>
+                            <td style="vertical-align: middle">{{ book.title }}</td>
+                            <td style="vertical-align: middle">{{ book.price }}$</td>
+                            <td><img src="{{book.image.url}}" width="60px" height="110px"></td>
                         </tr>
                         {% endfor %}
                       </tbody>
                     </table>
+                    <div class="alert alert-warning" style="text-align: center;">
+                        <strong>Total price:</strong> {{cart.get_total_price}}$
+                    </div>
                     <a type="button" class="btn btn-primary center" href="#" style="display: flex; justify-content: center;">Buy</a>
                 </div>
             </div>
@@ -52,7 +55,7 @@
                 <span class="px-4 text-white">Hello, {{user.username}}!</span><a type="button" class="btn btn-outline-light me-2" href="{% url 'logout' %}">Logout</a>
               {% else %}
                 <a type="button" class="btn btn-outline-light me-2" href="{% url 'login' %}">Sign in</a>
-                <a type="button" class="btn btn-warning" href="{% url 'signup' %}">Sign up</a>
+                <a type="button" class="btn btn-warning" href="{% url 'account-registration' %}">Sign up</a>
               {% endif %}
             </div>
           </div>
