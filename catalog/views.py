@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from .models import Book
@@ -90,9 +91,12 @@ class SearchView(TemplateView):
 
     def post(self, request):
         content = request.POST['content']
-        books_by_title = Book.objects.filter(title__icontains=content)
-        books_by_summary = Book.objects.filter(summary__icontains=content)
-        result = books_by_title.union(books_by_summary, all=False)
+        result = Book.objects.filter(
+            Q(title__icontains=content) |
+            Q(summary__icontains=content) |
+            Q(author__first_name__icontains=content) |
+            Q(author__last_name__icontains=content)
+        )
         params = {
             'books': result
         }
